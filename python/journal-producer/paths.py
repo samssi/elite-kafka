@@ -11,7 +11,9 @@ def list_journal_files():
     files = sorted(os.listdir(process_directory))
     
     journal_files = list(filter(lambda file : re.match(journal_file_pattern, file), files))
-    return journal_files
+    journal_files_fullpath = list(map(lambda file: f'{process_directory}{file}', journal_files))
+
+    return journal_files_fullpath
 
 def home_directory():
     return str(Path.home())

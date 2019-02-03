@@ -1,6 +1,9 @@
+from processor import file_operations
+
 class JournalProcessor:
     def __init__(self, files):
         self.files = files
 
     def start(self):
-        print(self.files)
+        for file in self.files:
+            file_operations.read_file_as_json(file)
