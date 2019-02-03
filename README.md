@@ -1,2 +1,2 @@
 # elite-kafka
-Kafka related tools for Elite data
+Kafka related tools for Elite Dangerous data
