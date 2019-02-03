@@ -6,4 +6,4 @@ class JournalProcessor:
 
     def start(self):
         for file in self.files:
-            file_operations.read_file_as_json(file)
+            file_operations.stream_file_as_json(file)
