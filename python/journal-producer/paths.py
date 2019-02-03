@@ -2,7 +2,7 @@ from pathlib import Path
 import os
 import paths
 import re
-from config import config
+from journalconfig import config
 
 journal_file_pattern = "Journal.[0-9]{12}.[0-9]{2}.log"
 
