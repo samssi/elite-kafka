@@ -1,5 +1,6 @@
 from kafka import KafkaConsumer
 from journalconfig import config
+from client import elasticsearch_client
 import json
 
 broker_uri = config.read_kafka_config()['broker_uri']
@@ -18,6 +19,6 @@ class JournalConsumer:
 
         for message in consumer:
             data = json.loads(message.value)
-            print(f'{data}\n')
+            elasticsearch_client.post("http://localhost:9200/elitejournal/_doc", data)
 
         consumer.close()

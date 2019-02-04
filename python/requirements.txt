@@ -1,2 +1,3 @@
 pylint
 kafka-python
+requests
