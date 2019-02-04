@@ -1,4 +1,3 @@
-from kafka import KafkaProducer
 from processor.journal_processor import JournalProcessor
 import paths
 
