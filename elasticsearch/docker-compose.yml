@@ -7,7 +7,7 @@ services:
       - "9300:9300"
 
     networks:
-      - es-net
+      - elite-net
 
   kibana:
     image: kibana:6.5.4
@@ -15,7 +15,7 @@ services:
       - "5601:5601"
     
     networks:
-      - es-net
+      - elite-net
 
 networks: 
-  es-net:
+  elite-net:
