@@ -1,3 +1,4 @@
 pylint
 kafka-python
 requests
+redis
