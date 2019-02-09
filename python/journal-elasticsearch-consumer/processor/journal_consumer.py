@@ -10,8 +10,10 @@ class JournalConsumer:
         self.elasticsearch_url = config.read_elasticsearch_config()['elasticsearch_url']
         self.elasticsearch_journal_index = config.read_elasticsearch_config()['elasticsearch_journal_index']
         self.consumer = KafkaConsumer(bootstrap_servers=[self.broker_uri],
-                                 auto_offset_reset='earliest',
-                                 consumer_timeout_ms=1000)
+                                      enable_auto_commit=True,
+                                      auto_offset_reset='earliest',
+                                      group_id='journal-es-consumer',
+                                      consumer_timeout_ms=1000)
         
 
     def start(self):
