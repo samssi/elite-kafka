@@ -9,14 +9,14 @@ elite_journal_topic = kafka_config['journal_topic']
 producer = KafkaProducer(bootstrap_servers=[broker_uri])
 
 def stream_file_as_json(file):
-    with open(file, 'r') as file:
-        try:
+    try:
+        with open(file, 'r') as file:
             for line in file:
                 parsed = json.loads(line)
                 json_string = json.dumps(parsed).encode('utf-8')
                 send_to_kafka(json_string)
-        finally:
-            file.close()
+    finally:
+        file.close()
 
 def send_to_kafka(json_string):
     print(f'Sending to topic "{elite_journal_topic}": {json_string}')    
